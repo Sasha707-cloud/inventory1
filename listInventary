@@ -1,0 +1,34 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Lessons2
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            List<string> inventary = new List<string>();
+
+            for (int i = 0; i < 5; i++)
+            {
+                Console.WriteLine($"введите название предмета: {i + 1}");
+                string item = Console.ReadLine();
+                inventary.Add(item);
+            }
+
+            Console.WriteLine("\nсодержимое инвенторя:");
+            foreach (var item in inventary)
+            {
+                Console.WriteLine(item);
+            }
+
+           
+
+        }
+    }
+}
