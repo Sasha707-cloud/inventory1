@@ -1,0 +1,47 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Lessons2
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            string[] inventory = { "Меч", "лук", "зелье", "ключ", "монета" };
+
+            Console.WriteLine("Текущий инвентарь:");
+            for (int i = 0; i < inventory.Length; i++)
+            {
+                Console.WriteLine($"[{i}] {inventory[i]}");
+            }
+
+            Console.WriteLine("Введите номер предмета, который хотите заменить:");
+            int index;
+            while (!int.TryParse(Console.ReadLine(), out index) || index < 0 || index >= inventory.Length)
+            {
+                Console.WriteLine("Неверный индекс:");
+            }
+
+            Console.WriteLine("Введите новое имя предмета:");
+            string newItemName = Console.ReadLine();
+
+            inventory[index] = newItemName;
+
+            Console.WriteLine("Инвентарь после замены:");
+            for (int i = 0; i < inventory.Length; i++)
+            {
+                Console.WriteLine($"[{i}] {inventory[i]}");
+            }
+
+
+
+        }
+
+
+    }
+}
